@@ -1,1 +1,3 @@
-# CoinAgentDoc-ApiDoc.github.io
+# 流程指引
+
+钱包绑定  →  子账户开通以及API绑定  →  算力充值  →  跟单策略  →  算力扣除

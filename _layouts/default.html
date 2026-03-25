@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+    <script defer src="{{ '/assets/site.js' | relative_url }}"></script>
+  </head>
+  <body>
+    {% assign current_url = page.url | replace: 'index.html', '' %}
+    {% assign current_section = '' %}
+    {% assign previous_title = '' %}
+    {% assign previous_url = '' %}
+    {% assign next_title = '' %}
+    {% assign next_url = '' %}
+    {% assign found_current = false %}
+
+    {% for group in site.data.navigation %}
+      {% for item in group.items %}
+        {% assign normalized_item = item.url %}
+        {% unless normalized_item == '/' %}
+          {% assign normalized_item = normalized_item | append: '/' %}
+        {% endunless %}
+        {% assign item_url = normalized_item | relative_url %}
+
+        {% if current_url == item_url %}
+          {% assign current_section = group.section %}
+          {% assign found_current = true %}
+        {% elsif found_current and next_title == '' %}
+          {% assign next_title = item.title %}
+          {% assign next_url = item_url %}
+        {% endif %}
+
+        {% if found_current == false and current_url != item_url %}
+          {% assign previous_title = item.title %}
+          {% assign previous_url = item_url %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    <div class="mobile-backdrop" data-sidebar-backdrop></div>
+    <div class="image-lightbox" data-lightbox hidden>
+      <button class="image-lightbox-close" type="button" aria-label="关闭预览" data-lightbox-close>关闭</button>
+      <img class="image-lightbox-image" alt="" data-lightbox-image>
+    </div>
+    <div class="shell">
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-head">
+          <div class="brand">
+            <a href="{{ '/' | relative_url }}">CoinAgent</a>
+          </div>
+          <p class="brand-subtitle">帮助文档</p>
+          <label class="sidebar-search">
+            <span class="sidebar-search-label">搜索文档</span>
+            <input
+              class="sidebar-search-input"
+              type="search"
+              placeholder="搜索标题和正文"
+              data-nav-search
+            >
+          </label>
+          <div class="search-results" data-search-results data-search-index="{{ '/search.json' | relative_url }}" hidden></div>
+        </div>
+        <nav class="nav">
+          {% for group in site.data.navigation %}
+            {% assign group_has_current = false %}
+            {% for item in group.items %}
+              {% assign normalized_item = item.url %}
+              {% unless normalized_item == '/' %}
+                {% assign normalized_item = normalized_item | append: '/' %}
+              {% endunless %}
+              {% assign item_url = normalized_item | relative_url %}
+              {% if current_url == item_url %}
+                {% assign group_has_current = true %}
+              {% endif %}
+            {% endfor %}
+            <section class="nav-group{% if group_has_current %} active{% endif %}" data-nav-group>
+              <button class="nav-group-toggle" type="button" data-nav-toggle aria-expanded="{% if group_has_current %}true{% else %}false{% endif %}">
+                <span class="nav-group-title">{{ group.section }}</span>
+                <span class="nav-caret" aria-hidden="true"></span>
+              </button>
+              <div class="nav-group-items" {% unless group_has_current %}hidden{% endunless %}>
+                {% for item in group.items %}
+                  {% assign normalized_item = item.url %}
+                  {% unless normalized_item == '/' %}
+                    {% assign normalized_item = normalized_item | append: '/' %}
+                  {% endunless %}
+                  {% assign item_url = normalized_item | relative_url %}
+                  {% assign is_current = false %}
+                  {% if current_url == item_url %}
+                    {% assign is_current = true %}
+                  {% endif %}
+                  <a class="nav-link{% if is_current %} active{% endif %}" href="{{ item_url }}">{{ item.title }}</a>
+                {% endfor %}
+              </div>
+            </section>
+          {% endfor %}
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="topbar">
+          <button class="menu-toggle" type="button" data-sidebar-toggle aria-label="打开目录">目录</button>
+          <a class="topbar-home" href="{{ '/' | relative_url }}">CoinAgent 帮助文档</a>
+        </div>
+        <header class="page-header">
+          <div class="breadcrumbs">
+            <a href="{{ '/' | relative_url }}">帮助文档</a>
+            {% if current_section != '' %}
+              <span>/</span>
+              <span>{{ current_section }}</span>
+            {% endif %}
+          </div>
+          <div class="eyebrow">Documentation</div>
+          <h1>{{ page.title }}</h1>
+        </header>
+        <article class="doc">
+          {{ content }}
+        </article>
+        <aside class="toc" data-toc-root>
+          <div class="toc-title">本页目录</div>
+          <nav class="toc-links" data-toc-links></nav>
+        </aside>
+        {% if previous_title != '' or next_title != '' %}
+          <nav class="pager">
+            {% if previous_title != '' %}
+              <a class="pager-link prev" href="{{ previous_url }}">
+                <span class="pager-label">上一页</span>
+                <strong>{{ previous_title }}</strong>
+              </a>
+            {% endif %}
+            {% if next_title != '' %}
+              <a class="pager-link next" href="{{ next_url }}">
+                <span class="pager-label">下一页</span>
+                <strong>{{ next_title }}</strong>
+              </a>
+            {% endif %}
+          </nav>
+        {% endif %}
+      </main>
+    </div>
+  </body>
+</html>

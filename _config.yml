@@ -1,0 +1,17 @@
+title: CoinAgent Docs
+description: CoinAgent API and usage documentation
+markdown: kramdown
+permalink: pretty
+
+# GitHub Pages' Jekyll build ignores dot-directories by default.
+# The original docs reference images under .gitbook/assets, so they must be
+# explicitly included or all embedded images will 404 after deployment.
+include:
+  - .gitbook
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
