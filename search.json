@@ -2,13 +2,17 @@
 layout: null
 ---
 [
-{% assign docs = site.pages | where_exp: "item", "item.title and item.url != '/search.json'" %}
-{% for page in docs %}
+{% assign first_result = true %}
+{% for page in site.pages %}
+{% if page.title and page.url != '/search.json' %}
+  {% unless first_result %},{% endunless %}
   {
     "title": {{ page.title | jsonify }},
     "url": {{ page.url | relative_url | jsonify }},
     "section": {{ page.title | jsonify }},
-    "content": {{ page.content | markdownify | strip_html | normalize_whitespace | jsonify }}
-  }{% unless forloop.last %},{% endunless %}
+    "content": {{ page.content | markdownify | strip_html | strip_newlines | replace: '  ', ' ' | jsonify }}
+  }
+  {% assign first_result = false %}
+{% endif %}
 {% endfor %}
 ]
