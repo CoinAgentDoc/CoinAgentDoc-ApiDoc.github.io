@@ -19,9 +19,9 @@ title: 欧易手机端
 1. 完成身份认证
 2. 并启用双重身份验证（2FA）
 
-<figure><img src="../.gitbook/assets/q1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q1.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/q2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q2.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -35,9 +35,9 @@ title: 欧易手机端
 
 **【登录】**&#x6B27;易APP
 
-在右上角点&#x51FB;**【设置中心】**
+在左上角点击**【设置中心】**
 
-<figure><img src="../.gitbook/assets/w1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w1.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -49,7 +49,7 @@ title: 欧易手机端
 
 点击右上&#x89D2;**【切换账户】**
 
-<figure><img src="../.gitbook/assets/w2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w2.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -59,7 +59,7 @@ title: 欧易手机端
 
 选&#x62E9;**【标准账户】**
 
-<figure><img src="../.gitbook/assets/w3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w3.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -71,7 +71,7 @@ title: 欧易手机端
 
 注意事项：建议输入独特登录名，避免和其他用户重复，无法创建子账户
 
-<figure><img src="../.gitbook/assets/w4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w4.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -83,7 +83,7 @@ title: 欧易手机端
 
 点击切换到刚刚创建&#x7684;**【子账户】**
 
-<figure><img src="../.gitbook/assets/w5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w5.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -99,7 +99,7 @@ title: 欧易手机端
 
 
 
-<figure><img src="../.gitbook/assets/w6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w6.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -113,9 +113,9 @@ title: 欧易手机端
 
 验证手机号需要未与您的其他欧易主/子帐户绑定过
 
-<figure><img src="../.gitbook/assets/w71.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w71.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/w72.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w72.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -127,7 +127,7 @@ title: 欧易手机端
 
 如果没有看到API功能，检查APP版本是否为最新
 
-<figure><img src="../.gitbook/assets/w8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w8.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -137,7 +137,7 @@ title: 欧易手机端
 
 点&#x51FB;**【创建API key】**
 
-<figure><img src="../.gitbook/assets/w9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w9.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -147,7 +147,7 @@ title: 欧易手机端
 
 用途选&#x62E9;**【API交易】**
 
-输入<mark style="color:red;">**【我们给IP地址白名单】**</mark>
+选择**【IP访问无限制】**
 
 权限在已读的默认选择上添&#x52A0;**【交易】**
 
@@ -157,7 +157,7 @@ title: 欧易手机端
 
 
 
-<figure><img src="../.gitbook/assets/w10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w10.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -169,7 +169,7 @@ title: 欧易手机端
 
 点&#x51FB;**【显示详情】**
 
-<figure><img src="../.gitbook/assets/w11.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w11.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -179,7 +179,7 @@ title: 欧易手机端
 
 复制记&#x4F4F;**【API key】**，**【Secret key】**&#x548C;**【API密码】**
 
-<figure><img src="../.gitbook/assets/w12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/w12.png" alt=""><figcaption></figcaption></figure>
 
 
 

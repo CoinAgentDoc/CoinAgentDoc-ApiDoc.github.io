@@ -20,9 +20,9 @@ title: 欧易电脑端
 2. 完成身份认证
 3. 并启用双重身份验证（2FA）
 
-<figure><img src="../.gitbook/assets/q1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q1.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/q2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q2.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -38,7 +38,7 @@ title: 欧易电脑端
 
 &#x20;在右上角点&#x51FB;**【头像】** → 选&#x62E9;**【子账户】**
 
-<figure><img src="../.gitbook/assets/q3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q3.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -48,7 +48,7 @@ title: 欧易电脑端
 
 点&#x51FB;**【创建子账户】**
 
-<figure><img src="../.gitbook/assets/q4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q4.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -60,7 +60,7 @@ title: 欧易电脑端
 
 注意事项：建议输入独特登录名，避免和其他用户重复，无法创建子账户
 
-<figure><img src="../.gitbook/assets/q5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q5.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -70,7 +70,7 @@ title: 欧易电脑端
 
 **【通过验证】**&#x540E;，子帐户开通成功，显示在列表里，如果没能顺利验证，请检查前置条件
 
-<figure><img src="../.gitbook/assets/q6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q6.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -80,7 +80,7 @@ title: 欧易电脑端
 
 点击菜&#x5355;**【子账户】**
 
-<figure><img src="../.gitbook/assets/q7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q7.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -96,7 +96,7 @@ title: 欧易电脑端
 
 点&#x51FB;**【创建API key】**
 
-<figure><img src="../.gitbook/assets/q8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q8.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -106,7 +106,7 @@ title: 欧易电脑端
 
 在账户一栏选择刚刚创建&#x7684;**【子账户】**
 
-<figure><img src="../.gitbook/assets/q9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q9.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -116,11 +116,11 @@ title: 欧易电脑端
 
 用途选&#x62E9;**【API交易】**
 
-输入<mark style="color:red;">**【我们给IP地址白名单】**</mark>
+选择**【IP访问无限制】**
 
 权限在已读的默认选择上添&#x52A0;**【交易】**
 
-<figure><img src="../.gitbook/assets/q10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q10.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -132,7 +132,7 @@ title: 欧易电脑端
 
 点&#x51FB;**【完成】**
 
-<figure><img src="../.gitbook/assets/q11.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q11.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -142,7 +142,7 @@ title: 欧易电脑端
 
 创建好的子账户API在列表中显示，点&#x51FB;**【查看】**
 
-<figure><img src="../.gitbook/assets/q12.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q12.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -152,7 +152,7 @@ title: 欧易电脑端
 
 **【通过验证】**
 
-<figure><img src="../.gitbook/assets/q13.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q13.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -162,7 +162,7 @@ title: 欧易电脑端
 
 摘抄记&#x4F4F;**【API key】、【密钥】**&#x548C;**【API密码】**
 
-<figure><img src="../.gitbook/assets/q14.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/.gitbook/assets/q14.png" alt=""><figcaption></figcaption></figure>
 
 
 
