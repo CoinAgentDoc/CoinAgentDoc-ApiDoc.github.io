@@ -41,7 +41,7 @@ title: 流程指引
     <strong>算力相关问题</strong>
     <span>查看充值、扣费和使用过程中的常见问题。</span>
   </a>
-  <a class="doc-card" href="{{ '/gen-dan-ce-le-wen-ti/gen-dan-ce-le-wen-ti/' | relative_url }}">
+  <a class="doc-card is-single" href="{{ '/gen-dan-ce-le-wen-ti/gen-dan-ce-le-wen-ti/' | relative_url }}">
     <strong>跟单策略问题</strong>
     <span>了解策略运作、数据说明和使用注意事项。</span>
   </a>

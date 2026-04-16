@@ -14,11 +14,8 @@ title: 币安电脑端
 
 
 
-**检查前置条件，顺利完成后续验证：**
-
-1. 确保登录官方网站：<mark style="color:blue;">https://www.binance.com/zh-CN</mark>
-2. 完成身份认证
-3. 并启用双重身份验证（2FA）
+1. 完成身份认证
+2. 并启用双重身份验证（2FA）
 
 <figure><img src="/.gitbook/assets/币安双重验证页面@3x.png" alt=""><figcaption></figcaption></figure>
 

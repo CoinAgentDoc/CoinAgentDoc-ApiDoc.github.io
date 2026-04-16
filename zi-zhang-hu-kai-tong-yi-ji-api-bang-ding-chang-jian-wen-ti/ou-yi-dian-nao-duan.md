@@ -14,11 +14,9 @@ title: 欧易电脑端
 
 
 
-**检查前置条件，顺利完成后续验证：**
 
-1. 确保登录官方网站：<mark style="color:$primary;">https://www.okx.com/zh-hans</mark>
-2. 完成身份认证
-3. 并启用双重身份验证（2FA）
+1. 完成身份认证
+2. 并启用双重身份验证（2FA）
 
 <figure><img src="/.gitbook/assets/q1.png" alt=""><figcaption></figcaption></figure>
 

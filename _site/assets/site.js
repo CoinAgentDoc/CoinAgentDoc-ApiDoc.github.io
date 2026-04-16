@@ -155,6 +155,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (doc) {
+    const enableStepCards = doc.dataset.stepCards !== "false";
+    const enableStepLabels = doc.dataset.stepLabels !== "false";
+
     doc.querySelectorAll("img").forEach((image) => {
       image.addEventListener("click", () => {
         if (!lightbox || !lightboxImage) return;
@@ -165,67 +168,73 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    let sectionIndex = 0;
-    let stepIndex = 0;
-    let node = doc.firstElementChild;
+    if (enableStepCards) {
+      let currentSectionTitle = "";
+      let stepIndex = 0;
+      let node = doc.firstElementChild;
 
-    while (node) {
-      if (node.tagName === "H2") {
-        sectionIndex += 1;
-        stepIndex = 0;
-      }
-
-      if (node.tagName === "HR") {
-        const cardNodes = [];
-        let cursor = node.nextElementSibling;
-
-        while (cursor && cursor.tagName !== "HR" && cursor.tagName !== "H2") {
-          const next = cursor.nextElementSibling;
-          cardNodes.push(cursor);
-          cursor = next;
+      while (node) {
+        if (node.tagName === "H2") {
+          currentSectionTitle = normalizeText(node.textContent);
+          stepIndex = 0;
         }
 
-        const hasMeaningfulContent = cardNodes.some((item) => normalizeText(item.textContent) !== "" || item.tagName === "FIGURE");
+        if (node.tagName === "HR") {
+          const cardNodes = [];
+          let cursor = node.nextElementSibling;
 
-        if (hasMeaningfulContent) {
-          stepIndex += 1;
-          const card = document.createElement("section");
-          card.className = "step-card";
-          const label = document.createElement("div");
-          label.className = "step-label";
-          label.textContent = `Step ${stepIndex}`;
-          card.appendChild(label);
+          while (cursor && cursor.tagName !== "HR" && cursor.tagName !== "H2") {
+            const next = cursor.nextElementSibling;
+            cardNodes.push(cursor);
+            cursor = next;
+          }
 
-          const copy = document.createElement("div");
-          copy.className = "step-card-copy";
-          const media = document.createElement("div");
-          media.className = "step-card-media";
+          const hasMeaningfulContent = cardNodes.some((item) => normalizeText(item.textContent) !== "" || item.tagName === "FIGURE");
 
-          cardNodes.forEach((item) => {
-            if (item.tagName === "FIGURE") {
-              media.appendChild(item);
-            } else {
-              copy.appendChild(item);
+          if (hasMeaningfulContent) {
+            stepIndex += 1;
+            const card = document.createElement("section");
+            card.className = "step-card";
+            const shouldShowStepLabel = enableStepLabels && !currentSectionTitle.includes("前置条件");
+
+            if (shouldShowStepLabel) {
+              const label = document.createElement("div");
+              label.className = "step-label";
+              label.textContent = `Step ${stepIndex}`;
+              card.appendChild(label);
             }
-          });
 
-          if (copy.childNodes.length > 0) {
-            card.appendChild(copy);
-          }
-          if (media.childNodes.length > 0) {
-            card.appendChild(media);
+            const copy = document.createElement("div");
+            copy.className = "step-card-copy";
+            const media = document.createElement("div");
+            media.className = "step-card-media";
+
+            cardNodes.forEach((item) => {
+              if (item.tagName === "FIGURE") {
+                media.appendChild(item);
+              } else {
+                copy.appendChild(item);
+              }
+            });
+
+            if (copy.childNodes.length > 0) {
+              card.appendChild(copy);
+            }
+            if (media.childNodes.length > 0) {
+              card.appendChild(media);
+            }
+
+            node.replaceWith(card);
+          } else {
+            node.remove();
           }
 
-          node.replaceWith(card);
-        } else {
-          node.remove();
+          node = cursor;
+          continue;
         }
 
-        node = cursor;
-        continue;
+        node = node.nextElementSibling;
       }
-
-      node = node.nextElementSibling;
     }
 
     doc.querySelectorAll("p, li").forEach((element) => {

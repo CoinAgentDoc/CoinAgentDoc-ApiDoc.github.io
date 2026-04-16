@@ -109,6 +109,14 @@ a:hover {
 
 .brand a {
   color: var(--heading);
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 24px;
 }
 
 .brand-subtitle {
@@ -301,6 +309,14 @@ a:hover {
 .topbar-home {
   color: var(--heading);
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+}
+
+.topbar-logo {
+  display: block;
+  width: auto;
+  height: 20px;
 }
 
 .menu-toggle {
@@ -669,6 +685,13 @@ a:hover {
   line-height: 1.55;
 }
 
+
+.doc .doc-card.is-single {
+  grid-column: 1 / -1;
+  max-width: 420px;
+  justify-self: center;
+}
+
 .portal-hero {
   margin-bottom: 28px;
   padding: 24px 24px 20px;
@@ -736,9 +759,11 @@ a:hover {
 }
 
 .pager {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
   grid-column: 1;
   margin-top: 48px;
   padding-top: 24px;
@@ -746,12 +771,18 @@ a:hover {
 }
 
 .pager-link {
-  display: block;
-  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(220px, 100%);
+  min-height: 78px;
+  padding: 12px 16px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
   color: var(--ink);
+  text-align: center;
 }
 
 .pager-link:hover {
@@ -761,12 +792,12 @@ a:hover {
 }
 
 .pager-link.next {
-  text-align: right;
+  text-align: center;
 }
 
 .pager-label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: var(--muted);
   font-size: 0.82rem;
 }
@@ -777,9 +808,19 @@ a:hover {
   }
 
   .doc .doc-grid,
-  .pager,
   .portal-flow {
     grid-template-columns: 1fr;
+  }
+
+  .pager {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doc .doc-card.is-single {
+    grid-column: auto;
+    max-width: none;
+    justify-self: stretch;
   }
 
   .step-card {

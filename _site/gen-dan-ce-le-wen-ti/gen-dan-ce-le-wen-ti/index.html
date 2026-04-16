@@ -28,7 +28,9 @@
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-head">
           <div class="brand">
-            <a href="/">CoinAgent</a>
+            <a href="/" aria-label="Coin Agent">
+              <img class="brand-logo" src="/.gitbook/assets/logo.svg" alt="Coin Agent logo">
+            </a>
           </div>
           <p class="brand-subtitle">帮助文档</p>
           <label class="sidebar-search">
@@ -166,7 +168,9 @@
       <main class="content">
         <div class="topbar">
           <button class="menu-toggle" type="button" data-sidebar-toggle aria-label="打开目录">目录</button>
-          <a class="topbar-home" href="/">CoinAgent 帮助文档</a>
+          <a class="topbar-home" href="/" aria-label="Coin Agent">
+            <img class="topbar-logo" src="/.gitbook/assets/logo.svg" alt="Coin Agent logo">
+          </a>
         </div>
         <header class="page-header">
           <div class="breadcrumbs">
@@ -179,12 +183,12 @@
           <div class="eyebrow">Documentation</div>
           <h1>跟单策略问题</h1>
         </header>
-        <article class="doc">
+        <article class="doc" data-step-cards="true" data-step-labels="false">
           <h1 id="跟单策略问题">跟单策略问题</h1>
-
+<hr />
 <h4 id="q1策略数据是真实的吗"><strong>Q1：策略数据是真实的吗？</strong></h4>
 
-<p>A：是的，数据来自平台自有账户的真实运行情况。</p>
+<p>A：是的，策略数据来自平台自有账户的真实运行情况。</p>
 
 <hr />
 
@@ -193,7 +197,9 @@
 <p>A：</p>
 
 <ol>
-  <li>API 状态正常，权限正确、白名单 IP 正确</li>
+  <li>API 状态正常</li>
+  <li>权限正确</li>
+  <li>IP 访问无限制</li>
   <li>子账户的 USDT ≥ 策略要求的最低金额</li>
   <li>算力 ≥ 0</li>
 </ol>
@@ -206,9 +212,9 @@
 
 <ol>
   <li>正常达到策略的结束触发条件</li>
-  <li>用户修改了 API 设置 → API 失效 → 策略结束（结束后请您自行去交易所查看亏损以及后续操作。）</li>
+  <li>用户修改 API 设置，导致 API 失效，策略随之结束（结束后请您自行前往交易所查看亏损情况及后续处理）。</li>
   <li>用户挪用交易账户资产 → 策略异常退出</li>
-  <li>算力不足、未及时充值 → 策略结束</li>
+  <li>算力不足且未及时充值，策略将结束</li>
 </ol>
 
         </article>

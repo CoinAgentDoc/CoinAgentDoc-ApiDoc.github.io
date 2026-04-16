@@ -49,7 +49,9 @@
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-head">
           <div class="brand">
-            <a href="{{ '/' | relative_url }}">CoinAgent</a>
+            <a href="{{ '/' | relative_url }}" aria-label="Coin Agent">
+              <img class="brand-logo" src="{{ '/.gitbook/assets/logo.svg' | relative_url }}" alt="Coin Agent logo">
+            </a>
           </div>
           <p class="brand-subtitle">帮助文档</p>
           <label class="sidebar-search">
@@ -103,7 +105,9 @@
       <main class="content">
         <div class="topbar">
           <button class="menu-toggle" type="button" data-sidebar-toggle aria-label="打开目录">目录</button>
-          <a class="topbar-home" href="{{ '/' | relative_url }}">CoinAgent 帮助文档</a>
+          <a class="topbar-home" href="{{ '/' | relative_url }}" aria-label="Coin Agent">
+            <img class="topbar-logo" src="{{ '/.gitbook/assets/logo.svg' | relative_url }}" alt="Coin Agent logo">
+          </a>
         </div>
         <header class="page-header">
           <div class="breadcrumbs">
@@ -116,7 +120,7 @@
           <div class="eyebrow">Documentation</div>
           <h1>{{ page.title }}</h1>
         </header>
-        <article class="doc">
+        <article class="doc" data-step-cards="{% if page.step_cards == false %}false{% else %}true{% endif %}" data-step-labels="{% if page.step_labels == false %}false{% else %}true{% endif %}">
           {{ content }}
         </article>
         <aside class="toc" data-toc-root>
