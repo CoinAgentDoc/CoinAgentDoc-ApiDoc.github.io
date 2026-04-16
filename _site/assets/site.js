@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.querySelector("[data-lightbox]");
   const lightboxImage = document.querySelector("[data-lightbox-image]");
   const lightboxClose = document.querySelector("[data-lightbox-close]");
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const normalizeText = (value) => (value || "").replace(/\s+/g, " ").trim();
   const escapeHtml = (value) =>
@@ -19,6 +20,60 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;");
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const updateScrollProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress =
+      scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+    body.style.setProperty("--scroll-progress", progress.toFixed(4));
+  };
+  const setupRevealMotion = () => {
+    const selectors = [
+      ".page-header",
+      ".portal-hero",
+      ".doc .doc-card",
+      ".portal-flow-item",
+      ".step-card",
+      ".callout",
+      ".doc figure",
+      ".doc pre",
+      ".doc blockquote",
+      ".pager-link",
+      ".toc",
+    ];
+    const targets = Array.from(document.querySelectorAll(selectors.join(", ")));
+
+    if (targets.length === 0) return;
+
+    targets.forEach((target, index) => {
+      target.classList.add("reveal-on-scroll");
+      target.style.setProperty("--reveal-order", `${index % 6}`);
+    });
+
+    if (reducedMotionQuery.matches || !("IntersectionObserver" in window)) {
+      targets.forEach((target) => target.classList.add("is-visible"));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.14,
+      },
+    );
+
+    targets.forEach((target) => revealObserver.observe(target));
+  };
+
+  updateScrollProgress();
+  window.addEventListener("scroll", updateScrollProgress, { passive: true });
+  window.addEventListener("resize", updateScrollProgress);
 
   const closeSidebar = () => {
     body.classList.remove("sidebar-open");
@@ -272,57 +327,58 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  setupRevealMotion();
+
   const headings = Array.from(document.querySelectorAll(".doc h2, .doc h3"));
 
   if (!tocRoot || !tocLinks || headings.length === 0) {
     if (tocRoot) tocRoot.hidden = true;
-    return;
-  }
-
-  headings.forEach((heading, index) => {
-    if (!heading.id) {
-      heading.id = `section-${index + 1}`;
-    }
-    const link = document.createElement("a");
-    link.href = `#${heading.id}`;
-    link.textContent = heading.textContent.trim();
-    link.className = `toc-link toc-${heading.tagName.toLowerCase()}`;
-    link.dataset.target = heading.id;
-    tocLinks.appendChild(link);
-  });
-
-  const tocMap = new Map(
-    Array.from(tocLinks.querySelectorAll(".toc-link")).map((link) => [link.dataset.target, link]),
-  );
-
-  let latestActiveTop = Number.POSITIVE_INFINITY;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      latestActiveTop = Number.POSITIVE_INFINITY;
-      let nextActive = null;
-
-      entries.forEach((entry) => {
-        const link = tocMap.get(entry.target.id);
-        if (!link) return;
-        if (entry.isIntersecting && entry.boundingClientRect.top < latestActiveTop) {
-          latestActiveTop = entry.boundingClientRect.top;
-          nextActive = link;
-        }
-      });
-
-      if (nextActive) {
-        tocLinks.querySelectorAll(".toc-link.active").forEach((item) => item.classList.remove("active"));
-        nextActive.classList.add("active");
+  } else {
+    headings.forEach((heading, index) => {
+      if (!heading.id) {
+        heading.id = `section-${index + 1}`;
       }
-    },
-    {
-      rootMargin: "-12% 0px -72% 0px",
-      threshold: 0.1,
-    },
-  );
+      const link = document.createElement("a");
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent.trim();
+      link.className = `toc-link toc-${heading.tagName.toLowerCase()}`;
+      link.dataset.target = heading.id;
+      tocLinks.appendChild(link);
+    });
 
-  headings.forEach((heading) => observer.observe(heading));
+    const tocMap = new Map(
+      Array.from(tocLinks.querySelectorAll(".toc-link")).map((link) => [link.dataset.target, link]),
+    );
+
+    let latestActiveTop = Number.POSITIVE_INFINITY;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        latestActiveTop = Number.POSITIVE_INFINITY;
+        let nextActive = null;
+
+        entries.forEach((entry) => {
+          const link = tocMap.get(entry.target.id);
+          if (!link) return;
+          if (entry.isIntersecting && entry.boundingClientRect.top < latestActiveTop) {
+            latestActiveTop = entry.boundingClientRect.top;
+            nextActive = link;
+          }
+        });
+
+        if (nextActive) {
+          tocLinks.querySelectorAll(".toc-link.active").forEach((item) => item.classList.remove("active"));
+          nextActive.classList.add("active");
+        }
+      },
+      {
+        rootMargin: "-12% 0px -72% 0px",
+        threshold: 0.1,
+      },
+    );
+
+    headings.forEach((heading) => observer.observe(heading));
+  }
 
   if (lightbox && lightboxClose) {
     const closeLightbox = () => {

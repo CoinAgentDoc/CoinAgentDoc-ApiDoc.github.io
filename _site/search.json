@@ -5,7 +5,7 @@
   
   {
     "title": "绑定钱包常见问题",
-    "url": "/bang-ding-qian-bao-chang-jian-wen-ti/bang-ding-qian-bao-chang-jian-wen-ti/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/bang-ding-qian-bao-chang-jian-wen-ti/bang-ding-qian-bao-chang-jian-wen-ti/",
     "section": "绑定钱包常见问题",
     "content": "绑定钱包常见问题Q1：为什么需要绑定钱包？可以换绑吗？A：绑定的钱包是平台识别您身份的方式，一个钱包代表一个账号。目前不支持换绑。Q2：算力是从哪里扣？用什么充值？A：算力充值来自 您绑定钱包内的 USDT。"
   }
@@ -16,7 +16,7 @@
   ,
   {
     "title": "币安电脑端",
-    "url": "/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/bi-an-dian-nao-duan/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/bi-an-dian-nao-duan/",
     "section": "币安电脑端",
     "content": "币安电脑端什么是子账户？用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。 完成身份认证 并启用双重身份验证（2FA）【登录】币安官网 在右上角点击【头像】 → 选择【子账户】左侧菜单中选择：【子账户】-【账户管理】第一次创建子账户时，需要点击【激活】按钮点击右上角【创建子账户】【填入表单】注意事项：只有输入没有绑定过币安主账户/子账户的邮箱地址，币安才会发送验证码【输入验证码】后【通过认证】，如果没能顺利认证，请重复检查前置条件子帐户开通成功后，显示在列表里绑定子账户API左侧菜单中选择：【子账户】-【API管理】点击【创建API】选择【系统生成】点击【邮箱】选择刚刚创建的【子账户邮箱】，API标签随意输入再次【通过验证】后，如果没能顺利验证，请检查前置条件复制保存【API密钥】和【密钥】下滑页面，选择【IP访问无限制】在API权限处，勾选【允许现货及杠杆交易】点击【保存】"
   }
@@ -27,7 +27,7 @@
   ,
   {
     "title": "币安手机端",
-    "url": "/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/bi-an-shou-ji-duan/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/bi-an-shou-ji-duan/",
     "section": "币安手机端",
     "content": "币安手机端什么是子账户？用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。开通子账户 完成身份认证 并启用双重身份验证（2FA）【登录】币安App 在左上角点击【更多设置】点击【头像】，进入账户信息页点击【子账户】（从未开通过子账户的，需要在网页端激活，不然移动端不会显示子账户功能）点击【创建子账户】【填入表单】注意事项：只有输入没有绑定过币安主账户/子账户的邮箱地址，币安才会发送验证码【通过验证】后，子帐户开通成功，显示在列表里，如果没能顺利认证，请重复检查前置条件绑定子账户API左上角点击【帐号管理】选择【API管理】点击【创建API】选择【系统生成】点击【邮箱】选择刚刚开通的【子账户邮箱】，API标签随便输入再次【通过验证】，如果没能顺利验证，请检查前置条件复制保存好【API密钥】和【密钥】下滑页面，选择【IP访问无限制】输入后，在API权限处勾选【允许现货及杠杆交易】完成后，点击【保存】"
   }
@@ -38,7 +38,7 @@
   ,
   {
     "title": "跟单策略问题",
-    "url": "/gen-dan-ce-le-wen-ti/gen-dan-ce-le-wen-ti/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/gen-dan-ce-le-wen-ti/gen-dan-ce-le-wen-ti/",
     "section": "跟单策略问题",
     "content": "跟单策略问题Q1：策略数据是真实的吗？A：是的，策略数据来自平台自有账户的真实运行情况。Q2：开始跟单策略需要满足哪些条件？A： API 状态正常 权限正确 IP 访问无限制 子账户的 USDT ≥ 策略要求的最低金额 算力 ≥ 0Q3：策略订单有哪些结束情况？A： 正常达到策略的结束触发条件 用户修改 API 设置，导致 API 失效，策略随之结束（结束后请您自行前往交易所查看亏损情况及后续处理）。 用户挪用交易账户资产 → 策略异常退出 算力不足且未及时充值，策略将结束"
   }
@@ -49,7 +49,7 @@
   ,
   {
     "title": "流程指引",
-    "url": "/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/",
     "section": "流程指引",
     "content": "流程指引 CoinAgent Docs 钱包绑定 → 子账户开通以及 API 绑定 → 算力充值 → 跟单策略 → 算力扣除   文档式流程指引  币安 / 欧易  电脑端 / 手机端 快速开始   绑定钱包常见问题  先了解钱包绑定目的、规则和常见疑问。    币安电脑端  适合桌面端完成子账户开通与 API 绑定流程。    币安手机端  在 App 内完成子账户和 API 配置的完整步骤。    欧易电脑端  桌面端创建子账户并设置 API 白名单。    欧易手机端  移动端完成 API 交易权限与白名单设置。    算力相关问题  查看充值、扣费和使用过程中的常见问题。    跟单策略问题  了解策略运作、数据说明和使用注意事项。 推荐阅读顺序   1. 绑定钱包  先确认钱包绑定规则和平台使用前提。    2. 开通子账户  按交易所和设备类型选择对应教程。    3. 绑定 API  完成白名单、权限和密钥信息配置。    4. 检查算力与策略  最后确认策略运行和扣费相关问题。 "
   }
@@ -60,7 +60,7 @@
   ,
   {
     "title": "欧易电脑端",
-    "url": "/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/ou-yi-dian-nao-duan/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/ou-yi-dian-nao-duan/",
     "section": "欧易电脑端",
     "content": "欧易电脑端什么是子账户？用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。开通子账户 完成身份认证 并启用双重身份验证（2FA）【登录】欧易官网 在右上角点击【头像】 → 选择【子账户】点击【创建子账户】【填入表单】注意事项：建议输入独特登录名，避免和其他用户重复，无法创建子账户【通过验证】后，子帐户开通成功，显示在列表里，如果没能顺利验证，请检查前置条件点击菜单【子账户】绑定子账户API菜单中选择【API】点击【创建API key】在账户一栏选择刚刚创建的【子账户】用途选择【API交易】选择【IP访问无限制】权限在已读的默认选择上添加【交易】【通过验证】后，创建成功，如果没能顺利验证，请检查前置条件点击【完成】创建好的子账户API在列表中显示，点击【查看】【通过验证】摘抄记住【API key】、【密钥】和【API密码】"
   }
@@ -71,7 +71,7 @@
   ,
   {
     "title": "欧易手机端",
-    "url": "/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/ou-yi-shou-ji-duan/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/ou-yi-shou-ji-duan/",
     "section": "欧易手机端",
     "content": "欧易手机端什么是子账户？用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。开通子账户 完成身份认证 并启用双重身份验证（2FA）【登录】欧易APP在左上角点击【设置中心】点击【创建子账户】点击右上角【切换账户】选择【标准账户】【填入表单】注意事项：建议输入独特登录名，避免和其他用户重复，无法创建子账户【通过验证】后，子帐户开通成功，显示在列表里，如果没能顺利验证，请检查前置条件点击切换到刚刚创建的【子账户】绑定子账户API【切换到子账户】后在【用户中心】里重新检查子账户身份【验证方式】验证手机号需要未与您的其他欧易主/子帐户绑定过在设置中心页底部点击【API】如果没有看到API功能，检查APP版本是否为最新点击【创建API key】用途选择【API交易】选择【IP访问无限制】权限在已读的默认选择上添加【交易】【通过验证】后，创建成功，如果没能顺利验证，请检查前置条件点击【显示详情】复制记住【API key】，【Secret key】和【API密码】"
   }
@@ -84,7 +84,7 @@
   ,
   {
     "title": "算力相关问题",
-    "url": "/suan-li-xiang-guan-wen-ti/suan-li-xiang-guan-wen-ti/",
+    "url": "/CoinAgentDoc-ApiDoc.github.io/suan-li-xiang-guan-wen-ti/suan-li-xiang-guan-wen-ti/",
     "section": "算力相关问题",
     "content": "算力相关问题Q1：算力如何充值？A：您钱包里的 1 USDT = 100 算力。链上充值后后台检测到账，会自动入账（可能略有延迟）。Q2：算力如何扣除？A：每笔策略结束后，按您的盈利扣算力：盈利 10 USDT → 扣 1 点算力"
   }

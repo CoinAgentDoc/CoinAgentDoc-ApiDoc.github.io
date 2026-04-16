@@ -8,7 +8,7 @@ step_labels: false
 #### **Q1：策略数据是真实的吗？**
 
 A：是的，策略数据来自平台自有账户的真实运行情况。
-<figure><img src="/.gitbook/assets/c1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/c1.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 ***
 
 #### **Q2：开始跟单策略需要满足哪些条件？**
@@ -20,7 +20,7 @@ A：
 3. IP 访问无限制
 4. 子账户的 USDT ≥ 策略要求的最低金额
 5. 算力 ≥ 0
-<figure><img src="/.gitbook/assets/c2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/c2.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 ***
 
 #### **Q3：策略订单有哪些结束情况？**
@@ -31,4 +31,4 @@ A：
 2. 用户修改 API 设置，导致 API 失效，策略随之结束（结束后请您自行前往交易所查看亏损情况及后续处理）。
 3. 用户挪用交易账户资产 → 策略异常退出
 4. 算力不足且未及时充值，策略将结束
-<figure><img src="/.gitbook/assets/c3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/c3.png' | relative_url }}" alt=""><figcaption></figcaption></figure>

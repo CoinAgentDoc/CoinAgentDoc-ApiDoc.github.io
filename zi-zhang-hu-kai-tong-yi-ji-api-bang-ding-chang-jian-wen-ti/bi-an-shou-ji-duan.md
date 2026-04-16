@@ -17,9 +17,9 @@ title: 币安手机端
 1. 完成身份认证
 2. 并启用双重身份验证（2FA）
 
-<figure><img src="/.gitbook/assets/币安双重验证页面@3x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/币安双重验证页面@3x.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="/.gitbook/assets/币安前置验证2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/币安前置验证2.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -31,7 +31,7 @@ title: 币安手机端
 
 在左上角点&#x51FB;**【更多设置】**
 
-<figure><img src="/.gitbook/assets/11 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/11 (1).PNG' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -41,7 +41,7 @@ title: 币安手机端
 
 点&#x51FB;**【头像】**，进入账户信息页
 
-<figure><img src="/.gitbook/assets/22.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/22.PNG' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -53,7 +53,7 @@ title: 币安手机端
 
 （从未开通过子账户的，需要在网页端激活，不然移动端不会显示子账户功能）
 
-<figure><img src="/.gitbook/assets/33.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/33.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -63,7 +63,7 @@ title: 币安手机端
 
 点&#x51FB;**【创建子账户】**
 
-<figure><img src="/.gitbook/assets/44.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/44.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -75,7 +75,7 @@ title: 币安手机端
 注意事项：\
 只有输入没有绑定过币安主账户/子账户的邮箱地址，币安才会发送验证码
 
-<figure><img src="/.gitbook/assets/55.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/55.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -85,7 +85,7 @@ title: 币安手机端
 
 **【通过验证】**&#x540E;，子帐户开通成功，显示在列表里，如果没能顺利认证，请重复检查前置条件
 
-<figure><img src="/.gitbook/assets/66.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/66.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -102,7 +102,7 @@ title: 币安手机端
 \
 选&#x62E9;**【API管理】**
 
-<figure><img src="/.gitbook/assets/77.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/77.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -112,7 +112,7 @@ title: 币安手机端
 
 点&#x51FB;**【创建API】**
 
-<figure><img src="/.gitbook/assets/88.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/88.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -122,7 +122,7 @@ title: 币安手机端
 
 选&#x62E9;**【系统生成】**
 
-<figure><img src="/.gitbook/assets/99.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/99.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -136,7 +136,7 @@ title: 币安手机端
 
 再&#x6B21;**【通过验证】，**&#x5982;果没能顺利验证，请检查前置条件
 
-<figure><img src="/.gitbook/assets/1010.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/1010.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -146,7 +146,7 @@ title: 币安手机端
 
 复制保存&#x597D;**【API密钥】**&#x548C;**【密钥】**
 
-<figure><img src="/.gitbook/assets/1111.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/1111.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -161,7 +161,7 @@ title: 币安手机端
 
 完成后，点&#x51FB;**【保存】**
 
-<figure><img src="/.gitbook/assets/1212.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="{{ '/.gitbook/assets/1212.png' | relative_url }}" alt=""><figcaption></figcaption></figure>
 
 
 
