@@ -8,7 +8,8 @@ title: 欧易手机端
 
 用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。
 
-## <mark style="color:purple;">前置条件</mark>
+
+## <mark style="color:purple;">开通子账户</mark>
 
 ***
 
@@ -24,9 +25,7 @@ title: 欧易手机端
 
 
 
-***
 
-## <mark style="color:purple;">开通子账户</mark>
 
 ***
 

@@ -8,7 +8,7 @@ title: 币安手机端
 
 用户可以在主账户下开通多个子账户，子账户可以实现策略分离、资金隔离、风险管理。建议您绑定后不要随意挪动子账户内的资产，造成策略不能正常运行的亏损。
 
-## <mark style="color:purple;">前置条件</mark>
+## <mark style="color:purple;">开通子账户</mark>
 
 ***
 
@@ -22,10 +22,6 @@ title: 币安手机端
 <figure><img src="/.gitbook/assets/币安前置验证2.png" alt=""><figcaption></figcaption></figure>
 
 
-
-***
-
-## <mark style="color:purple;">开通子账户</mark>
 
 ***
 
