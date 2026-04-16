@@ -25,7 +25,7 @@
         {% endunless %}
         {% assign item_url = normalized_item | relative_url %}
 
-        {% if current_url == item_url %}
+        {% if current_url == normalized_item %}
           {% assign current_section = group.section %}
           {% assign found_current = true %}
         {% elsif found_current and next_title == '' %}
@@ -33,7 +33,7 @@
           {% assign next_url = item_url %}
         {% endif %}
 
-        {% if found_current == false and current_url != item_url %}
+        {% if found_current == false and current_url != normalized_item %}
           {% assign previous_title = item.title %}
           {% assign previous_url = item_url %}
         {% endif %}
@@ -73,7 +73,7 @@
                 {% assign normalized_item = normalized_item | append: '/' %}
               {% endunless %}
               {% assign item_url = normalized_item | relative_url %}
-              {% if current_url == item_url %}
+              {% if current_url == normalized_item %}
                 {% assign group_has_current = true %}
               {% endif %}
             {% endfor %}
@@ -90,7 +90,7 @@
                   {% endunless %}
                   {% assign item_url = normalized_item | relative_url %}
                   {% assign is_current = false %}
-                  {% if current_url == item_url %}
+                  {% if current_url == normalized_item %}
                     {% assign is_current = true %}
                   {% endif %}
                   <a class="nav-link{% if is_current %} active{% endif %}" href="{{ item_url }}">{{ item.title }}</a>

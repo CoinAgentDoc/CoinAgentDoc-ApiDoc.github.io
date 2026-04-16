@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -335,18 +339,26 @@ input:focus-visible {
   gap: 6px;
 }
 
+.nav-group.active .nav-group-items {
+  padding-left: 14px;
+}
+
+.nav-group.active .nav-group-items .nav-link {
+  font-weight: 600;
+}
+
 .nav-caret {
   width: 8px;
   height: 8px;
   border-right: 1.5px solid var(--muted);
   border-bottom: 1.5px solid var(--muted);
-  transform: rotate(45deg);
+  transform: rotate(135deg);
   transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 .nav-group.active .nav-caret {
   border-color: var(--accent);
-  transform: rotate(225deg);
+  transform: rotate(45deg);
 }
 
 .nav-group.filtered-out {

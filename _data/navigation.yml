@@ -1,4 +1,4 @@
-- section: 新手流程
+- section: 新手流程指引
   items:
     - title: 流程指引
       url: /
@@ -6,7 +6,7 @@
   items:
     - title: 绑定钱包常见问题
       url: /bang-ding-qian-bao-chang-jian-wen-ti/bang-ding-qian-bao-chang-jian-wen-ti
-- section: 子账户开通以及 API 绑定
+- section: 子账户开通以及API绑定常见问题
   items:
     - title: 币安电脑端
       url: /zi-zhang-hu-kai-tong-yi-ji-api-bang-ding-chang-jian-wen-ti/bi-an-dian-nao-duan
