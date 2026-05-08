@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImage = document.querySelector("[data-lightbox-image]");
   const lightboxClose = document.querySelector("[data-lightbox-close]");
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const i18n = window.CoinAgentI18n;
 
   const normalizeText = (value) => (value || "").replace(/\s+/g, " ").trim();
   const escapeHtml = (value) =>
@@ -20,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll("<", "&lt;")
       .replaceAll(">", "&gt;");
   const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const translateForCurrentLanguage = (value) =>
+    i18n && i18n.getLanguage() === "en" ? i18n.translateString(value) : value;
   const updateScrollProgress = () => {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     const progress =
@@ -113,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (items.length === 0) {
         const empty = document.createElement("div");
         empty.className = "search-empty";
-        empty.textContent = "没有匹配的文档结果";
+        empty.textContent = translateForCurrentLanguage("没有匹配的文档结果");
         searchResults.appendChild(empty);
         searchResults.hidden = false;
         return;
@@ -126,7 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const title = document.createElement("span");
         title.className = "search-result-title";
-        const highlightedTitle = escapeHtml(item.title).replace(
+        const displayTitle = translateForCurrentLanguage(item.title || "");
+        const highlightedTitle = escapeHtml(displayTitle).replace(
           new RegExp(`(${escapeRegExp(keyword)})`, "ig"),
           '<mark class="search-highlight">$1</mark>',
         );
@@ -134,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const snippet = document.createElement("span");
         snippet.className = "search-result-snippet";
-        const text = item.content || "";
+        const text = translateForCurrentLanguage(item.content || "");
         const lower = text.toLowerCase();
         const at = lower.indexOf(keyword.toLowerCase());
         const snippetStart = Math.max(0, at - 24);
@@ -200,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
           searchResults.innerHTML = "";
         } else {
           const matchedDocs = searchIndex.filter((item) => {
-            const haystack = `${item.title} ${item.content}`.toLowerCase();
+            const haystack = translateForCurrentLanguage(`${item.title} ${item.content}`).toLowerCase();
             return haystack.includes(keyword);
           });
           renderSearchResults(matchedDocs, keyword);
@@ -398,6 +402,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && !lightbox.hidden) {
         closeLightbox();
+      }
+    });
+  }
+
+  if (i18n) {
+    i18n.init();
+    document.addEventListener("coinagent:languagechange", () => {
+      if (navSearch && normalizeText(navSearch.value) !== "") {
+        navSearch.dispatchEvent(new Event("input"));
       }
     });
   }
